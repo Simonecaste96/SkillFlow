@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark d-flex">
+  <div class="container-fluid">
+    <a class="navbar-brand" *ngIf="!user" [routerLink]="['/']">SkillFlow</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex align-items-center">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          ><img src="../../../assets/img/logo skill flow.jpg" class="logo rounded-circle"/></a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" [routerLink]="['signup']">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" [routerLink]="['login']">Login</a>
+        </li>
+        <li *ngIf="user" class="nav-item">
+          <app-notification-container></app-notification-container>
+        </li>
+        <li class="nav-item dropdown" *ngIf="user">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profilo
+            <span>
+              <img [src]="user.user.pictureProfile" class="rounded-circle profile-pic" />
+            </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item " [routerLink]="['/userProfile',user.user.id,'skills']">Aggiungi Skills</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/userProfile',user.user.id,'appointments']">Gestisci appuntamenti</a>
+            </li>
+            <li>
+              <a class="btn btn-primary m-3" *ngIf="user" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex" *ngIf="user">
+        <input
+          type="search"
+          placeholder="Cerca"
+          aria-label="Search"
+          [formControl]="searchControl"
+          class="form-control me-2"
+        />
+        <ul
+          *ngIf="usersSearchResult && usersSearchResult.length"
+          class="list-group position-absolute search-results"
+        >
+          <ng-container *ngFor="let userSearch of usersSearchResult">
+            <li *ngIf="userSearch.id !== user.user.id" class="list-group-item list-group-item-action w-100 d-flex align-items-center justify-content-between">
+              <a (click)="navigateToProfile(userSearch)">
+                <img
+                  [src]="userSearch.pictureProfile"
+                  alt="{{ userSearch.name }}'s profile picture"
+                  class="img-thumbnail me-2 rounded-circle profile-pic"
+                />
+                {{ userSearch.name }} {{ userSearch.surname }}
+              </a>
+              <button (click)="sendRequest(userSearch.id)" class="btn btn-primary btn-sm mx-3 h-25">Collegati</button>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

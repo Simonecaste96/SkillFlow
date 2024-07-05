@@ -1,0 +1,156 @@
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+
+/* Navbar base styles */
+.navbar {
+  background-color: #f85e00;
+  transition: background-color 0.3s ease;
+}
+a{
+  cursor: pointer;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: $primary; /* Hover color */
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: $primary; /* Hover color */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ff6347; /* Active link color */
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  border-color: #ff6347;
+}
+
+.dropdown-menu {
+  background-color: $secondary;
+  border: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.dropdown-item{
+color: $text;
+}
+
+.dropdown-item:hover{
+  background-color: $secondary;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  color: $primary;
+}
+
+
+
+.dropdown-menu:hover {
+ color: $primary;
+ transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Search input and results */
+.d-flex input[type="search"] {
+  transition: border-color 0.3s ease;
+  border-radius: 30px;
+}
+
+.d-flex input[type="search"]:focus {
+  transition: border-color 0.9s ease;
+  border:solid 3px $primary;
+  border-color: $primary;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+}
+
+.container-fluid {
+  position: relative;
+}
+
+.search-results {
+  top: 100%; /* Position the list immediately below the form */
+  z-index: 1000; /* Ensure the list is above other elements */
+  background-color: white; /* Add a background for visibility */
+  border: 1px solid #ddd; /* Add a border to separate the list from the rest of the page */
+  max-height: 200px; /* Limit the height of the list */
+  overflow-y: auto; /* Add scroll if the list is too long */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  animation: fadeIn 0.3s ease;
+}
+
+.search-results .list-group-item {
+  transition: background-color 0.3s ease;
+}
+
+.search-results .list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.search-results .profile-pic {
+  width: 40px;
+  height: 40px;
+  border: 2px solid $secondary;
+  transition: border-color 0.3s ease;
+}
+
+.search-results .profile-pic:hover {
+  border-color: #ff6347;
+}
+
+.search-results button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-results button:hover {
+  background-color: #ff6347;
+  border: 0;
+  transform: scale(1.05);
+}
+
+.logo.rounded-circle{
+  width: 85px;
+  height: 85px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

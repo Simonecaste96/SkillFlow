@@ -1,0 +1,84 @@
+<div class="container">
+  <div *ngIf="userId == userIdParam" class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Skills</h2>
+    <button class="btn btn-primary
+    
+    
+    
+    " (click)="toggleAddSkill()">
+      <i class="fas fa-plus" *ngIf="!isAddingSkill">&nbsp;<span>Add Skill</span></i> 
+      <i class="fas fa-minus" *ngIf="isAddingSkill">&nbsp;<span>Come Back</span></i> 
+    </button>
+  </div>
+
+  <div *ngIf="showAddSkill" class="card mb-4">
+    <div class="card-body" *ngIf="userId == userIdParam">
+      <h5 class="card-title">{{ editingSkill ? 'Edit Skill' : 'New Skill' }}</h5>
+      <form [formGroup]="skillForm" (ngSubmit)="editingSkill ? updateSkill() : addSkill()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <div *ngIf="skillForm.get('name')?.invalid && skillForm.get('name')?.touched" class="text-danger">
+            Name is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="level">Level</label>
+          <select class="form-control" id="level" formControlName="level">
+            <option value="">Select a level</option>
+            <option *ngFor="let level of levels" [value]="level">{{ level | interestFormat}}</option>
+          </select>
+          <div *ngIf="skillForm.get('level')?.invalid && skillForm.get('level')?.touched" class="text-danger">
+            Level is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" formControlName="description"></textarea>
+          <div *ngIf="skillForm.get('description')?.invalid && skillForm.get('description')?.touched" class="text-danger">
+            Description is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="certificateBy">Certified By</label>
+          <input type="text" class="form-control" id="certificateBy" formControlName="certificateBy">
+          <div *ngIf="skillForm.get('certificateBy')?.invalid && skillForm.get('description')?.touched" class="text-danger">
+            Certified By is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="certificateDate">Certification Date</label>
+          <input type="date" class="form-control" id="certificateDate" formControlName="certificateDate">
+          <div *ngIf="skillForm.get('certificateDate')?.invalid && skillForm.get('description')?.touched" class="text-danger">
+            Certification Date is required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="skillForm.invalid">{{ editingSkill ? 'Update' : 'Save' }}</button>
+        <button type="button" class="btn btn-secondary m-2" (click)="toggleAddSkill()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="skills.length === 0 && userId == userIdParam" class="alert alert-info">
+    Inizia ad aggiungere le tue skill.
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let skill of skills">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ skill.name }}</h5>
+          <p class="card-text"><strong>Level:</strong> {{ skill.level }}</p>
+          <p class="card-text"><strong>Description:</strong> {{ skill.description }}</p>
+          <p class="card-text"><strong>Certified By:</strong> {{ skill.certificateBy }}</p>
+          <p class="card-text"><strong>Certification Date:</strong> {{ skill.certificateDate | date }}</p>
+          <div class="d-flex">
+            <button *ngIf="userId == userIdParam" class="btn btn-warning btn-sm mx-1" (click)="editSkill(skill)">Edit</button>
+          <button *ngIf="userId == userIdParam" class="btn btn-secondary btn-sm mx-1" (click)="deleteSkill(skill.id)">Delete</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+.list-group-item{
+    border:solid 2px $secondary;
+    border-radius: 20px;
+}

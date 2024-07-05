@@ -1,0 +1,159 @@
+  
+  /* Stile per il titolo e il pulsante nella parte superiore */
+
+  $text: #FFFFFF;
+  $background: #A21547;
+  $primary: #00002B;
+  $secondary: #E56E24;
+  $accent: #0BA4E6;
+  $warning: #EB9B33;
+  $pkmn-red: $accent;
+
+  .d-flex {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #fff;
+  }
+  
+  .btn-success {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-success i {
+    color: #fff;
+  }
+  
+  .btn-success:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Stile per la card del form */
+  .card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: transparentize(lighten($primary, 10%), 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 20px;
+    color: #ccc;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .form-group label {
+    color: #ccc;
+  }
+  
+  .form-control {
+    background-color: transparentize(lighten($primary, 10%), 0.5);
+    border: 1px solid #555;
+    color: #fff;
+  }
+  
+  .form-control:focus {
+    background-color: #555;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Stile per i messaggi */
+  .alert-info {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+  }
+  
+  .alert-info .alert-heading {
+    color: #fff;
+  }
+  
+  /* Stile per le card delle skill */
+  .card {
+    width: 100%;
+    border-radius: 10px;
+    background-color: transparentize(lighten($primary, 10%), 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 20px;
+    color: #ccc;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .card-text strong {
+    color: #fff;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: #000;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  

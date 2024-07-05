@@ -1,0 +1,29 @@
+<div class="card" style="width: 18rem; height: 60rem; border-radius: 40px;">
+  <a [routerLink]="['/userProfile', user.id]">  
+    <div class="card-header d-flex justify-content-center p-3">
+      <img [src]="user.pictureProfile" class="card-img-top rounded-circle " alt="Immagine profilo di: {{ user.name + ' ' + user.surname }}">  
+    </div>
+  </a>
+  <div class="card-body">
+    <h5 class="card-title">Interessi:</h5>
+    <p class="card-text">{{ user.interests }}</p>
+    <h5 class="card-title">Opinioni ricevute</h5>
+    <div *ngIf="reviews; else noReviews">
+      <div *ngFor="let review of reviews">
+        <div>
+          <p class="card-text">
+            <strong>Opinione di: </strong>
+            <a [routerLink]="['/userProfile', review.reviewer.id]">
+              {{ review.reviewer.name }} {{ review.reviewer.surname }}
+            </a>
+          </p>
+          <p class="card-text">{{ review.reviewText }}</p>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <ng-template #noReviews>
+      <p>Nessuna recensione disponibile.</p>
+    </ng-template>
+  </div>
+</div>

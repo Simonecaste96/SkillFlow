@@ -1,0 +1,36 @@
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    padding: 12px 16px;
+    border-radius: 20px;
+  }
+
+  
+  .dropdown-menu.show {
+    display: block;
+    color: $text
+  }
+
+  .material-symbols-outlined:hover{
+    color: $primary;
+  }
+  

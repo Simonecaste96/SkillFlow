@@ -1,0 +1,75 @@
+
+
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+.user-skill-exchange-request-container{
+    display: none; /* Nasconde il contenitore del form di scambio competenze per default */
+    margin-top: 20px; /* Spazio sopra il componente per separarlo dalla finestra della chat */
+    padding: 20px; /* Aggiunge spazio intorno al componente per migliorare la leggibilità */
+    border-radius: 5px; /* Bordi arrotondati */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .user-skill-exchange-request-container.active {
+    display: flex; /* Mostra il contenitore quando è attivo */
+    justify-content: center;
+    max-height: 1000px; /* Altezza massima per espandere il componente */
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Spazio tra i gruppi di campi del form */
+  }
+  
+  .form-group label {
+    display: block; /* Mostra le etichette dei campi del form come blocco */
+    margin-bottom: 5px; /* Spazio sotto le etichette */
+  }
+  
+  .form-group textarea,
+  .form-group input[type="date"] {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    padding: 8px; /* Padding interno per i campi di input */
+    font-size: 14px; /* Dimensione del carattere */
+    border: 1px solid #ccc; /* Bordo sottile */
+    border-radius: 4px; /* Bordi arrotondati */
+  }
+  
+
+  .button-container {
+    text-align: right; /* Allinea i pulsanti a destra */
+    margin-top: 10px; /* Spazio sopra i pulsanti */
+  }
+  
+  .button-container button {
+    padding: 10px 20px; /* Padding interno del pulsante */
+    font-size: 14px; /* Dimensione del carattere */
+    background-color: #007bff; /* Colore di sfondo del pulsante */
+    color: #fff; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    cursor: pointer; /* Cambia il cursore al passaggio */
+  }
+  
+  .button-container button[disabled] {
+    opacity: 0.5; /* Opacità ridotta per i pulsanti disabilitati */
+    cursor: not-allowed; /* Cambia il cursore a 'non permesso' */
+  }
+
+  .btn{
+border-radius: 30px;
+  }
+
+  .btn:hover{
+    background-color: $secondary;
+  }
+  

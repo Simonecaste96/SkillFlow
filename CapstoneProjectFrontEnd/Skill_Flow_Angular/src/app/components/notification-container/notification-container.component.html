@@ -1,0 +1,9 @@
+<div class="dropdown-container" (click)="toggleDropdown()">
+  <span class="material-symbols-outlined">
+    diversity_3
+  </span>
+  <div class="dropdown-menu bg-primary" [class.show]="isDropdownOpen">
+    <app-friend-request-list></app-friend-request-list>
+    <app-exchange-request-list></app-exchange-request-list>
+  </div>
+</div>

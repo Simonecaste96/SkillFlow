@@ -1,0 +1,18 @@
+<div *ngIf="exchangeRequests.length > 0; else noRequests" class="d-flex">
+    <div *ngFor="let request of exchangeRequests" class="request-card">
+      <div class="requester-info">
+        <img [src]="request.requester.pictureProfile" alt="{{ request.requester.name }}" class="profile-picture">
+        <div class="requester-details">
+          <p><strong>{{ request.requester.name }} {{ request.requester.surname }}</strong></p>
+          <p>{{ request.details }}</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button (click)="acceptRequest(request.id)" class="btn btn-secondary">Accetta</button>
+        <button (click)="rejectRequest(request.id)" class="btn btn-warning">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #noRequests>
+    <p>Nessuna richiesta di scambio di competenze trovata.</p>
+  </ng-template>

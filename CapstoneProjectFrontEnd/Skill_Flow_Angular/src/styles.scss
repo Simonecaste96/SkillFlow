@@ -1,0 +1,163 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+$custom-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "dark": $background,
+  "light": $text,
+  "danger": lighten($accent, 20%),
+  "warning": lighten($warning, 20%),
+  "success": $accent,
+  "info": $secondary
+) !default;
+
+// Unisco le variabili personalizzate con quelle di Bootstrap
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@mixin apply-theme($theme-name) {
+  @if $theme-name == 'light' {
+    :root {
+      --bs-body-color: #3a3335 !important;
+      --bs-body-bg: #d6d6ff !important;
+      --bs-primary:  #103956 !important;
+      --bs-secondary:#f85e00 !important;
+      --bs-accent: #3e885b !important;
+      --bs-warning: lighten(#ffc107, 20%) !important;
+      --bs-danger: lighten(#3e885b, 20%) !important;
+      --bs-success: #3e885b !important;
+      --bs-info: #103956 !important;
+    }
+  } @else if $theme-name == 'dark' {
+    :root {
+      --bs-body-color: #{$text} !important;
+      --bs-body-bg: #{$background} !important;
+      --bs-primary: #{$primary} !important;
+      --bs-secondary: #{$secondary} !important;
+      --bs-accent: #{$accent} !important;
+      --bs-warning: lighten(#{$warning}, 20%) !important;
+      --bs-danger: lighten(#{$accent}, 20%) !important;
+      --bs-success: #{$accent} !important;
+      --bs-info: #{$secondary} !important;
+    }
+  }
+}
+
+// Applicazione iniziale del tema chiaro
+body.light {
+  @include apply-theme(light);
+}
+
+// Applicazione del tema scuro
+body.dark {
+  @include apply-theme(dark);
+}
+
+body {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  background-color: $primary;
+  color: $text;
+  font-style: normal;
+}
+
+
+
+
+.container {
+  margin-top: 20px;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $primary;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+
+.post-card {
+  width: 100%;
+  background-color: transparentize(lighten($primary, 10%), 0.5);
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border: 2px solid $secondary;
+}
+
+.post-image {
+  border-bottom: 2px solid $secondary;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color:$text
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: $text;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $warning;
+  border-top: 1px solid #444;
+}
+
+.card-footer .btn {
+  background-color: $secondary;
+  color: $background;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.card-footer .btn:hover {
+  background-color: $secondary;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .post-card {
+    width: 90%;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+}

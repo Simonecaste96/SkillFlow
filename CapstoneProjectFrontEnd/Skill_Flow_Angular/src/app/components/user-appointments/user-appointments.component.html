@@ -1,0 +1,23 @@
+
+  <h2>I tuoi appuntamenti</h2>
+  <div *ngIf="appointments.length === 0">
+    <p>Nessun appuntamento previsto.</p>
+  </div>
+  <div *ngFor="let appointment of appointments" class="appointment-card">
+    <p>Previsto il: {{ appointment.appointmentDate }}&nbsp;&nbsp;&nbsp;alle ore: {{ appointment.appointmentTime }}</p>
+    <p></p>
+    <div class="requester-info">
+      <h4>Richiedente:</h4>
+      <img [src]="appointment.skillExchangeRequest.requester.pictureProfile" alt="Profile Picture" />
+      <div>
+        <p>{{ appointment.skillExchangeRequest.requester.name }}&nbsp;{{ appointment.skillExchangeRequest.requester.surname }}</p>
+        <p></p>
+      </div>
+    </div>
+    <p>Dettagli: {{ appointment.skillExchangeRequest.details }}</p>
+  </div>
+
+
+
+
+

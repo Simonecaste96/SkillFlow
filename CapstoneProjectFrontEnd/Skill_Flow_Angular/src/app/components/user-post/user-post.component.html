@@ -1,0 +1,28 @@
+<div class="post-container">
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="post-form">
+    <div class="form-group">
+      <textarea id="content" placeholder="Crea un post" [(ngModel)]="post.content" name="content" required></textarea>
+    </div>
+
+    <div class="form-group d-flex justify-content-around align-items-center">
+      <label for="resourceFiles" class="custom-file-upload">
+        <input type="file" id="resourceFiles" (change)="onFileChange($event)" multiple accept="image/*,video/*" style="display: none;">
+        
+        <i class="fa-regular fa-image text-secondary"></i>&nbsp;&nbsp;Carica un immagine
+      </label>
+      <button type="submit" class="submit-btn w-50">Create Post</button>
+    </div>
+
+    <div *ngIf="previews.length > 0" class="previews-container">
+      <h3>Previews:</h3>
+      <div *ngFor="let preview of previews" class="preview-item">
+        <img *ngIf="isImage(preview)" [src]="preview" class="preview-img">
+        <video *ngIf="!isImage(preview)" controls class="preview-video">
+          <source [src]="preview" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+   
+  </form>
+</div>

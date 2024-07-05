@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <app-main-content *ngIf="user"></app-main-content> 
+      <div class="row" *ngIf="!user">
+        <div class="col-xs-6 d-flex align-items-center justify-content-center ">
+          <app-login></app-login>
+        </div>
+        <div class="col-xs-6 text-center">
+          <video class="rounded-circle w-25 my-5" src="../../../assets/img/SkillFlow.mp4" loop autoplay muted></video>
+        </div>
+        <div class="col-xs-12 d-flex align-items-center justify-content-center">
+          <app-signup></app-signup>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+
+    

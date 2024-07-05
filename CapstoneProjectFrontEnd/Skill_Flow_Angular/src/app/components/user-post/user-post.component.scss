@@ -1,0 +1,140 @@
+
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+/* CSS per il container principale del post */
+.post-container {
+    padding: 20px;
+    background-color: transparentize(lighten($primary, 10%), 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+  }
+  
+  /* CSS per il form */
+  .post-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* CSS per i gruppi di form */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Stile per le etichette */
+  .form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+  }
+  
+  /* Stile per i textarea */
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: $text;
+    color: $primary;
+    resize: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .post-container {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .post-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .form-group textarea:focus {
+    border-color: $secondary;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .form-group textarea {
+    border-radius: 20px;
+  }
+  
+  .form-group textarea::placeholder {
+    color: $primary;
+  }
+  
+  /* Stile per il pulsante di upload personalizzato */
+  .custom-file-upload {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  fa-regular fa-image text-secondary
+
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .upload-btn {
+    padding: 10px 20px;
+    background-color: $secondary;
+    border: 1px solid #444;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .upload-btn i {
+    margin-right: 8px;
+  }
+  
+  
+  /* Stile per i container delle anteprime */
+  .previews-container {
+    margin-top: 20px;
+  }
+  
+  .previews-container h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .preview-item {
+    margin-bottom: 10px;
+  }
+  
+  .preview-img, .preview-video {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stile per il pulsante di submit */
+  .submit-btn {
+    padding: 12px 20px;
+    background-color: $secondary;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  
+  

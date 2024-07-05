@@ -1,0 +1,75 @@
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .appointment-card {
+    padding: 20px;
+    margin: 20px;
+    background-color: transparentize(lighten($primary, 10%), 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .appointment-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .appointment-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .appointment-card p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .requester-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  
+    h4 {
+      font-size: 18px;
+      margin-right: 10px;
+      margin-bottom: 0;
+      color: #fff;
+    }
+  
+    img {
+      max-width: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+   
+  
+    .appointment-card {
+      padding: 15px;
+    }
+  
+    .requester-info {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      img {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  

@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <img class="rounded-circle" [src]="request.sender.pictureProfile"/>
+     <p>{{ request.sender.name }} wants to be your friend.</p>
+  </div>
+   
+    <button (click)="acceptRequest()">Accept</button>
+    <button (click)="declineRequest()">Decline</button>
+  </div>

@@ -1,0 +1,94 @@
+/* Stile per il container della card */
+
+
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+
+.card {
+  width: 18rem;
+  height: 60rem;
+  border-radius: 30px;
+  background-color: transparentize(lighten($primary, 10%), 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stile per l'header della card */
+.card-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.card-header img {
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.card-header img:hover {
+  transform: scale(1.1);
+}
+
+/* Stile per il corpo della card */
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff; /* Modificato per contrasto con sfondo scuro */
+  transition: color 0.3s;
+}
+
+.card-body h5:hover {
+  color: $secondary;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #ccc; /* Modificato per contrasto con sfondo scuro */
+}
+
+/* Stile per le recensioni */
+.card-body .review {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.card-body .review p {
+  margin: 5px 0;
+}
+
+.card-body .review hr {
+  border-top: 1px solid #444; /* Colore scuro per separatore */
+}
+
+/* Stile per il link */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Aggiunto stile per il titolo della recensione */
+.card-body .review-title {
+  font-size: 1.2rem;
+  color: #fff; /* Modificato per contrasto con sfondo scuro */
+  margin-bottom: 10px;
+}
+.card-img-top.rounded-circle {
+ width: 150px;
+ height: 150px;
+}

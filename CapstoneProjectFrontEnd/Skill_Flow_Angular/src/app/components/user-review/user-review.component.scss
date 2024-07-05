@@ -1,0 +1,58 @@
+
+
+
+$text: #FFFFFF;
+$background: #A21547;
+$primary: #00002B;
+$secondary: #E56E24;
+$accent: #0BA4E6;
+$warning: #EB9B33;
+$pkmn-red: $accent;
+
+
+.user-review-container {
+    display: none;
+    transition: all 0.5s ease; /* Transizione per l'animazione di apertura e chiusura */
+  }
+  
+  .user-review-container.active {
+    display: block;
+    padding: 20px;
+  }
+  
+  .rating-container {
+    display: flex;
+  }
+  
+  .rating-container .star {
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .rating-container .star img {
+    width: 30px; /* Imposta la larghezza delle stelle */
+    transition: filter 0.3s ease; /* Aggiungi transizione per il filtro */
+  }
+  
+  .rating-container .star.selected img {
+    filter: grayscale(0) brightness(1.5); /* Stelle selezionate colorate e leggermente più luminose */
+  }
+  
+  .button-container {
+    margin-top: 10px;
+  }
+  
+  .submit-feedback {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .btn {
+    border-radius: 30px;
+  
+  }
+  .btn:hover {
+    background-color: $secondary;
+  }
+
+  
