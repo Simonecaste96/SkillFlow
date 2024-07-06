@@ -14,7 +14,7 @@
 	<name>SkillFlow</name>
 	<description>Applicazione per lo scambio di competenze</description>
 	<properties>
-		<java.version>22</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
