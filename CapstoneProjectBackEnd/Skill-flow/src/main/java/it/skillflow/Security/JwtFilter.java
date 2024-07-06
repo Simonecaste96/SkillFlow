@@ -30,10 +30,12 @@ public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private UserService userService;
 
+
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authHeader = request.getHeader("Authorization");
-        response.setHeader("Access-Control-Allow-Origin", "https://comparative-hattie-caste96-a0c5f6f8.koyeb.app");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
         response.setHeader("Access-Control-Allow-Credentials", "true");

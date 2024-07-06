@@ -18,7 +18,7 @@ import java.util.List;
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Value("${websocket.allowed.origins}")
-    private String allowedOrigins;
+    private String[] allowedOrigins;
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
