@@ -45,7 +45,7 @@ public class SecurityConfig{
         return new BCryptPasswordEncoder(11);
     }
 
-    @Value("${websocket.allowed.origins}")
+    @Value("${allowed.origins}")
     private String[] allowedOrigins;
 
 
