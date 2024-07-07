@@ -36,7 +36,7 @@ export class FriendRequestListComponent implements OnInit, OnDestroy {
         this.updateReceivedRequests();
         //this.updateSentRequests();
         //this.updateFriendsList();
-      }, 1000); // 1000 millisecondi (1 secondo) di ritardo
+      }, 1000); // rimetti a 1000 dopo aver finito di testare
     } else {
       console.error('User not found in localStorage');
     }
@@ -77,7 +77,9 @@ export class FriendRequestListComponent implements OnInit, OnDestroy {
 
   acceptRequest(requestId: number): void {
     this.friendRequestService.respondToFriendRequest(requestId, true).subscribe(() => {
-      //this.updateReceivedRequests();
+      this.friendRequestService.getFriendsList(this.userId).subscribe(friends => {
+        this.friends = friends;
+      });
     });
   }
 

@@ -28,7 +28,7 @@ export class ExchangeRequestListComponent implements OnInit, OnDestroy {
         this.skillExchangeRequestService.getSkillExchangeRequests(this.userId).subscribe((requests: SkillExchangeResponse[]) => {
           this.exchangeRequests = requests;
         });
-      }, 1000);
+      }, 1000); // rimetti a 1000 dopo aver finito di testare
     }
   }
 

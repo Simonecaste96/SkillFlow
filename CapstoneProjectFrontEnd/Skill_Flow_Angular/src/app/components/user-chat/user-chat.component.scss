@@ -92,7 +92,7 @@ $pkmn-red: $accent;
   border-radius: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  flex-grow: 1; /* Ensure chat window takes up available space */
+  flex-grow: 1;
 }
 
 .chat-header {

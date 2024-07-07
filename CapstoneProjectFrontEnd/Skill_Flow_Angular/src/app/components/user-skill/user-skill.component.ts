@@ -119,6 +119,7 @@ export class UserSkillComponent implements OnInit {
       this.resetForm();
     }
   }
+  
 
   private resetForm(): void {
     this.skillForm.reset();

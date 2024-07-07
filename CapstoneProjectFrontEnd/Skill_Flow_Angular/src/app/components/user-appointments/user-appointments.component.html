@@ -1,6 +1,6 @@
 
   <h2>I tuoi appuntamenti</h2>
-  <div *ngIf="appointments.length === 0">
+  <div class="text-center"  *ngIf="appointments.length === 0">
     <p>Nessun appuntamento previsto.</p>
   </div>
   <div *ngFor="let appointment of appointments" class="appointment-card">

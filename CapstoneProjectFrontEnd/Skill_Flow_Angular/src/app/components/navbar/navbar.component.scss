@@ -9,7 +9,10 @@ $pkmn-red: $accent;
 
 /* Navbar base styles */
 .navbar {
-  background-color: #f85e00;
+  //background-color: #f85e00;
+  //background-color: $primary;
+  background-color: transparentize(lighten($primary, 10%), 1);
+  //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 a{

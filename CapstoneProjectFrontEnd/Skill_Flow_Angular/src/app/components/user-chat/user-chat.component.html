@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="chat-window" *ngIf="selectedFriend">
+  <div class="chat-window" [ngClass]="{'open': selectedFriend}" *ngIf="selectedFriend">
     <div class="chat-header d-flex align-items-center p-3 bg-secondary">
       <img [src]="selectedFriend.pictureProfile" alt="Profile Picture" class="chat-header-photo">
       <h5 class="chat-header-title">{{ selectedFriend.name }}&nbsp;{{ selectedFriend.surname }}</h5>
@@ -27,8 +27,8 @@
         <strong>{{ message.sender === user.id ? 'You' : selectedFriend.name }}:</strong> {{ message.content }}
       </div>
     </div>
-    <div class="input-container d-flex bg-primary border-0 flex-wrap">
-      <input [(ngModel)]="messageContent" placeholder="Enter your message" class="mb-3" />
+    <div class="input-container d-flex bg-primary border-0 align-items-center">
+      <input [(ngModel)]="messageContent" placeholder="Scrivi qui"/>
       <button (click)="sendMessage()">Send</button>
     </div>
     <div>

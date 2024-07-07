@@ -85,23 +85,19 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   // distruggo i dati sotto osservazione per risparmiare mamoria
   ngOnDestroy(): void {
-    
-    this.userSubscription.unsubscribe();
-    
-   
-    this.receivedRequestsSubscription.unsubscribe();
-   
- 
-    this.friendsSubscription.unsubscribe();
-   
-   
-    this.searchSubscription.unsubscribe();
-
-    this.searchControl.reset();
-    this.usersSearchResult = [];
-    
-
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
     }
+    if (this.receivedRequestsSubscription) {
+      this.receivedRequestsSubscription.unsubscribe();
+    }
+    if (this.friendsSubscription) {
+      this.friendsSubscription.unsubscribe();
+    }
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
+  }
 
 
 
@@ -122,7 +118,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   navigateToProfile(user: User): void {
     this.router.navigate(['/userProfile/', user.id]).then(() => {
-      this.searchControl.reset();
+      this.searchControl.setValue('');
       this.usersSearchResult = [];
      });
   }

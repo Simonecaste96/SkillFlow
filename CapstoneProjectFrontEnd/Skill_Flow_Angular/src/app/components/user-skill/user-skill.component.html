@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container m-0">
   <div *ngIf="userId == userIdParam" class="d-flex justify-content-between align-items-center mb-4">
     <h2>Skills</h2>
     <button class="btn btn-primary
@@ -64,9 +64,9 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let skill of skills">
-      <div class="card">
-        <div class="card-body">
+    <div class="col-6 mb-4" *ngFor="let skill of skills">
+      <div class="card h-100">
+        <div class="card-body d-flex flex-column h-100 align-items-start">
           <h5 class="card-title">{{ skill.name }}</h5>
           <p class="card-text"><strong>Level:</strong> {{ skill.level }}</p>
           <p class="card-text"><strong>Description:</strong> {{ skill.description }}</p>
@@ -76,7 +76,6 @@
             <button *ngIf="userId == userIdParam" class="btn btn-warning btn-sm mx-1" (click)="editSkill(skill)">Edit</button>
           <button *ngIf="userId == userIdParam" class="btn btn-secondary btn-sm mx-1" (click)="deleteSkill(skill.id)">Delete</button>
           </div>
-          
         </div>
       </div>
     </div>

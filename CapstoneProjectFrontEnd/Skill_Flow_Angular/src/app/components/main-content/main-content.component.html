@@ -4,7 +4,7 @@
 
     </div>
     
-    <div class="col-4 mt-5">
+    <div class="col-xl-4 col-12">
     <app-user-post></app-user-post>
     </div>
     <div class="col-4">
@@ -13,8 +13,8 @@
   </section>
 
   <div class="row">
-    <app-user-details class="col-4 d-flex justify-content-center"></app-user-details>
-    <div class="col-4 d-flex flex-column align-items-center">
+    <app-user-details class="col-xl-4 d-md-flex d-none d-flex justify-content-center"></app-user-details>
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-12 d-flex flex-column align-items-center">
       <div *ngFor="let post of posts" class="card m-3 post-card" id="{{ post.id }}">
         <img [src]="post.resourceUrls" class="card-img-top post-image" alt="&nbsp;">
         <div class="card-body">
@@ -34,6 +34,6 @@
         </div>
       </div>
     </div>
-      <app-user-chat class="col-4 d-flex justify-content-center"></app-user-chat>
+      <app-user-chat class="col-4 d-flex justify-content-center "></app-user-chat>
   </div>
 </div>

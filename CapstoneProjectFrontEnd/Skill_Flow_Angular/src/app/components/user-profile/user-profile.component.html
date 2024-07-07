@@ -4,9 +4,9 @@
   </section>
 
   <div class="row">
-    <div class="col-4 mt-5">
-        <app-user-appointments *ngIf="userIdParam == userId"></app-user-appointments>
-        <app-user-details *ngIf="userIdParam != userId"></app-user-details>
+    <div class="col-4">
+        <app-user-appointments  *ngIf="userIdParam == userId"></app-user-appointments>
+        <app-user-details class="d-flex justify-content-center"  *ngIf="userIdParam != userId"></app-user-details>
     </div>
     <div class="col-4 d-flex flex-column align-items-center">
       <div *ngFor="let post of postByUserId" class="card m-3 post-card" id="{{ post.id }}">
@@ -16,7 +16,7 @@
             <span><img [src]="post.user.pictureProfile" class="rounded-circle profile-pic"/></span>
           </h5>
           <p class="card-text">{{ post.content }}</p>
-          <div class="card-footer">
+          <div class="card-footer bg-warning">
             <p class="card-text">Creato il: {{ post.createdDate || 'Data non disponibile' }}</p>
              <!-- DISATTIVATO MOMENTANEAMENTE, DA IMPLEMENTARE CON PROSSIMA FEATURE
             <p class="card-text">Flow Like: {{ post.likes }}</p>
@@ -26,9 +26,9 @@
         </div>
       </div>
     </div>
-    <div class="col-4 mt-5">
-     <app-user-skill></app-user-skill>
-      <app-user-chat></app-user-chat>
+    <div class="col-4 d-flex flex-column align-items-center">
+     <app-user-skill ></app-user-skill>
+      <app-user-chat class="col-4 d-flex justify-content-center" ></app-user-chat>
     </div>
   </div>
 </div>
