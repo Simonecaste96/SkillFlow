@@ -28,8 +28,8 @@ public class SkillController {
 
     @PutMapping("/skills/{skillId}")
     @PreAuthorize("hasAnyAuthority('NORMAL_USER','ADMIN')")
-    public void updateSkill(@RequestBody SkillDTO skillUpdate, @PathVariable int userId){
-        skillService.updateSkill(skillUpdate,userId);
+    public void updateSkill(@RequestBody SkillDTO skillUpdate, @PathVariable int skillId){
+        skillService.updateSkill(skillUpdate,skillId);
     }
 
 
