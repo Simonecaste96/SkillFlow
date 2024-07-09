@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav d-flex align-items-center">
+      <ul class="navbar-nav d-flex align-items-center w-100 ">
         <li class="nav-item">
           <a
             class="nav-link active"
@@ -60,10 +60,11 @@
       <div class="d-flex" *ngIf="user">
         <input
           type="search"
-          placeholder="Cerca"
+          placeholder="Cerca altri utenti"
           aria-label="Search"
           [formControl]="searchControl"
           class="form-control me-2"
+          style="width: 20vw;"
         />
         <ul
           *ngIf="usersSearchResult && usersSearchResult.length"
